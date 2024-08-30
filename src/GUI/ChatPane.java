@@ -25,6 +25,8 @@ public class ChatPane extends GridPane {
         txaChat.setPrefWidth(500);
         txaChat.setPrefHeight(500);
         txaChat.setEditable(false);
+        txaChat.setWrapText(true);
+
         this.add(txfChatbar,0,1);
         txfChatbar.setOnAction(event -> chatAction());
         txfChatbar.setPrefWidth(400);
@@ -43,6 +45,9 @@ public class ChatPane extends GridPane {
         }
         if (txfChatbar.getText().isEmpty()) {
             System.out.println("Empty chatbar");
+        } else if (!SettingsPane.getConnectionStatus().equals("CONNECTED")) {
+            System.out.println("You are not connected to a server");
+            txfChatbar.clear();
         } else {
             String message = txfChatbar.getText().trim();
             clientConsole.sendMessageToServer(message);

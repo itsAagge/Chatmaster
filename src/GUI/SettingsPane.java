@@ -15,10 +15,10 @@ public class SettingsPane extends GridPane {
     private TextField txfIP = new TextField();
     private TextField txfPort = new TextField();
     private Button btnConnect = new Button("Connect to Server");
-    private Label lblConnectionStatus = new Label("NOT CONNECTED");
-    private CheckBox chkBoxSelfHost = new CheckBox("I am the host");
+    private static Label lblConnectionStatus = new Label("NOT CONNECTED");
+    private CheckBox chkBoxSelfHost = new CheckBox("I am the host\n(for connecting)");
     private Button btnHost = new Button("Host server");
-    private Label lblHostStatus = new Label();
+    private Label lblHostStatus = new Label("Choose a port to host");
 
     public SettingsPane() {
         this.setPadding(new Insets(20));
@@ -61,6 +61,10 @@ public class SettingsPane extends GridPane {
         } else {
             lblConnectionStatus.setTextFill(Color.RED);
         }
+    }
+
+    public static String getConnectionStatus() {
+        return lblConnectionStatus.getText().trim();
     }
 
     public void hostServerAction() {

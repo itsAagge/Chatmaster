@@ -54,7 +54,7 @@ public class ClientConsole {
     public void sendConfirmationMessage() {
         try {
             DataOutputStream dataOutputStream = new DataOutputStream(socket.getOutputStream());
-            dataOutputStream.writeBytes(clientName + " has joined the chat\n");
+            dataOutputStream.writeBytes("System: " + clientName + " has joined the chat\n");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

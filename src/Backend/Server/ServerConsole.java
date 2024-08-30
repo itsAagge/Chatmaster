@@ -29,7 +29,7 @@ public class ServerConsole {
             this.serverInfo = new ServerInfo();
             ThreadAccept threadAccept = new ThreadAccept(serverSocket, serverInfo, this);
             threadAccept.start();
-            System.out.println("Server started with IP: " + serverSocket.getInetAddress().getLocalHost().getHostAddress());
+            System.out.println("Server started with IP: " + serverSocket.getInetAddress().getLocalHost().getHostAddress() + ", port: " + port);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
