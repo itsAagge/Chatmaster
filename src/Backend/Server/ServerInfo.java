@@ -4,7 +4,7 @@ import java.net.Socket;
 import java.util.ArrayList;
 
 public class ServerInfo {
-    ArrayList<Socket> clients = new ArrayList<>();
+    private ArrayList<Socket> clients = new ArrayList<>();
 
     public ServerInfo() {
     }
