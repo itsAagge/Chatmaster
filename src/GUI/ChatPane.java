@@ -46,6 +46,7 @@ public class ChatPane extends GridPane {
         } else {
             String message = txfChatbar.getText().trim();
             clientConsole.sendMessageToServer(message);
+            txfChatbar.clear();
         }
     }
 }
